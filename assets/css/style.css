@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;850&display=swap');
+
+:root {
+    --primary-green: #198754;     
+    --primary-dark-green: #0f5132;  
+    --light-green: #e8f5e9;        
+    --bg-color: #f8f9fa;            
+    --card-bg: #ffffff;             
+    --text-color: #212529;         
+    --text-muted: #6c757d;          
+    --border-color: #e2e8f0;
+}
+
+body.dark-mode {
+    --primary-green: #20c997;       
+    --primary-dark-green: #198754;
+    --light-green: #1f2937;         
+    --bg-color: #111827;           
+    --card-bg: #1f2937;             
+    --text-color: #f9fafb;       
+    --text-muted: #9ca3af;        
+    --border-color: #374151;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    scroll-behavior: smooth;
+}
+
+/* تعديلات النصوص بالوضع الليلي */
+.text-muted { color: var(--text-muted) !important; }
+.bg-white { background-color: var(--card-bg) !important; }
+.bg-light { background-color: var(--light-green) !important; }
+
+/* معالجة النصوص الباهتة والداكنة في الوضع المظلم */
+body.dark-mode label,
+body.dark-mode .form-label,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode .card-title,
+body.dark-mode .breadcrumb-item,
+body.dark-mode .accordion-button {
+    color: #ffffff !important;
+}
+
+body.dark-mode p,
+body.dark-mode .card-text,
+body.dark-mode .text-muted,
+body.dark-mode .accordion-body,
+body.dark-mode figcaption {
+    color: #e5e7eb !important;
+}
+
+/* حقول الإدخال والقوائم */
+body.dark-mode .form-select,
+body.dark-mode .form-control {
+    background-color: #1f2937 !important;
+    color: #ffffff !important;
+    border: 1px solid #4b5563 !important;
+}
+
+body.dark-mode .form-select option {
+    background-color: #111827 !important;
+    color: #ffffff !important;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--card-bg) !important;
+    border-bottom: 2px solid var(--primary-green);
+    transition: all 0.3s ease;
+}
+.navbar-brand { color: var(--primary-green) !important; }
+body.dark-mode .navbar-brand { color: var(--primary-green) !important; }
+.nav-link { color: var(--text-color) !important; }
+body.dark-mode .nav-link { color: #f9fafb !important; }
+
+/* الكروت والتأثيرات */
+.card, .event-card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(25, 135, 84, 0.2) !important;
+    border-color: var(--primary-green);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* السلايدر */
+.carousel-img {
+    height: 400px;
+    object-fit: cover;
+}
+
+/* الأزرار */
+.btn-primary, .btn-success {
+    background-color: var(--primary-green);
+    border: none;
+    color: #fff !important;
+}
+.btn-primary:hover, .btn-success:hover {
+    background-color: var(--primary-dark-green);
+    transform: translateY(-2px);
+}
+
+/* زر الصعود للأعلى */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    width: 45px;
+    height: 45px;
+    background-color: var(--primary-green);
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+body.dark-mode .alert-success {
+    background-color: #0f5132 !important;
+    border-color: #198754 !important;
+}
+body.dark-mode .alert-success h5,
+body.dark-mode .alert-success p {
+    color: #ffffff !important;
+}
+
+body.dark-mode ::placeholder {
+    color: #cbd5e1 !important; 
+    opacity: 1;
+}
+
+body.dark-mode .form-control, 
+body.dark-mode .form-select {
+    color: #ffffff !important; 
+    background-color: #1f2937 !important; 
+}
+
+
+
+
+#detailImage {
+    width: 100%;
+    height: 400px;           
+    object-fit: cover;     
+    object-position: center; 
+    border-radius: 12px;
+}
+
+.row.g-3 img {
+    width: 100%;
+    height: 150px;          
+    object-fit: cover;       
+    object-position: center;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.row.g-3 img:hover {
+    transform: scale(1.05);  
+}

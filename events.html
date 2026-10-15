@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كل الفعاليات - دليل الجامعة</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;850&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold d-flex align-items-center text-success" href="index.html">
+                    <i class="bi bi-mortarboard-fill fs-3 me-2"></i>
+                    <span>دليل الفعاليات</span>
+                </a>
+                
+                <button id="themeToggle" class="btn btn-outline-success btn-sm rounded-circle ms-2" title="تبديل الوضع">
+                    <i class="bi bi-moon-fill" id="themeIcon"></i>
+                </button>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+                        <li class="nav-item"><a class="nav-link fw-bold active" href="events.html">كل الفعاليات</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">عن الدليل</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-5">
+        <h2 class="fw-bold mb-4 border-start border-success border-4 ps-2">🔎 استكشف جميع الفعاليات</h2>
+
+        <!-- شريط الفلترة والبحث -->
+        <div class="row mb-4 bg-white p-4 shadow-sm rounded-3 border">
+            <div class="col-md-6 mb-3 mb-md-0">
+                <label for="categoryFilter" class="form-label fw-bold">صنّف حسب الفئة:</label>
+                <select id="categoryFilter" class="form-select bg-light border-0">
+                    <option value="all">كل الفئات</option>
+                    <option value="tech">💻 تقنية وبرمجة</option>
+                    <option value="design">🎨 تصميم وفنون</option>
+                    <option value="sport">⚽ رياضة ونشاطات</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="searchInput" class="form-label fw-bold">ابحث بالاسم:</label>
+                <input type="text" id="searchInput" class="form-control bg-light border-0" placeholder="اكتب اسم الفعالية هنا...">
+            </div>
+        </div>
+
+       <!-- شبكة الفعاليات (12 كرت موزعين 4 لكل تصنيف) بالصور المحلية -->
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="eventsGrid">
+            
+            <!-- ========================= -->
+            <!-- 💻 قسم التقنية والبرمجة -->
+            <!-- ========================= -->
+            <div class="col event-item" data-category="tech">
+                <div class="card h-100 shadow-sm border-0 event-card">
+                    <img src="assets/img/cyber.jpg" class="card-img-top" alt="أمن سيبراني">
+                    <div class="card-body">
+                        <span class="badge bg-success mb-2">تقنية وبرمجة</span>
+                        <h5 class="card-title fw-bold event-title">ندوة أساسيات الأمن السيبراني</h5>
+                        <p class="card-text text-muted small">مقدمة عملية حول حماية الأنظمة واكتشاف الثغرات الشائعة.</p>
+                        <div class="text-muted small mb-3">📅 20 أكتوبر 2026 | 📍 القاعة الافتراضية</div>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 pt-0"><a href="event.html" class="btn btn-primary w-100">التفاصيل</a></div>
+                </div>
+            </div>
+
+            <div class="col event-item" data-category="tech">
+                <div class="card h-100 shadow-sm border-0 event-card">
+                    <img src="assets/img/ai.jpg" class="card-img-top" alt="ذكاء اصطناعي">
+                    <div class="card-body">
+                        <span class="badge bg-success mb-2">تقنية وبرمجة</span>
+                        <h5 class="card-title fw-bold event-title">مؤتمر الذكاء الاصطناعي وتطبيقاته</h5>
+                        <p class="card-text text-muted small">استعراض نماذج التعلم العميق والحلول الذكية الحديثة.</p>
+                        <div class="text-muted small mb-3">📅 28 أكتوبر 2026 | 📍 مدرج الجامعة</div>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 pt-0"><a href="event.html" class="btn btn-primary w-100">التفاصيل</a></div>
+                </div>
+            </div>
+
+            <div class="col event-item" data-category="tech">
+                <div class="card h-100 shadow-sm border-0 event-card">
+                    <img src="assets/img/code.jpg" class="card-img-top" alt="تطوير ويب">
+                    <div class="card-body">
+                        <span class="badge bg-success mb-2">تقنية وبرمجة</span>
+                        <h5 class="card-title fw-bold event-title">ورشة بناء وتكامل واجهات الـ REST API</h5>
+                        <p class="card-text text-muted small">كيفية ربط التطبيقات واختبار الـ Endpoints باحترافية.</p>
+                        <div class="text-muted small mb-3">📅 5 نوفمبر 2026 | 📍 أونلاين - منصة Teams</div>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 pt-0"><a href="event.html" class="btn btn-primary w-100">التفاصيل</a></div>
+                </div>
+            </div>
+
+            <div class="col event-item" data-category="tech">
+                <div class="card h-100 shadow-sm border-0 event-card">
+                    <img src="assets/img/hackathon.jpg" class="card-img-top" alt="هاكاثون">
+                    <div class="card-body">
+                        <span class="badge bg-success mb-2">تقنية وبرمجة</span>
+                        <h5 class="card-title fw-bold event-title">هاكاثون البرمجة التنافسية للفرق</h5>
+                        <p class="card-text text-muted small">تحدي خوارزميات مكثف لمدة 24 ساعة بمشاركة طلاب الهندسة.</p>
+                        <div class="text-muted small mb-3">📅 12 نوفمبر 2026 | 📍 مخبر البرمجة المركزي</div>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 pt-0"><a href="event.html" class="btn btn-primary w-100">التفاصيل</a></div>
+                </div>
+            </div>
+
+            <!-- ========================= -->
+            <!-- 🎨 قسم التصميم والفنون -->
+            <!-- ========================= -->
+            <div class="col event-item" data-category="design">
+                <div class="card h-100 shadow-sm border-0 event-card">
+                    <img src="assets/img/uiux.jpg" class="card-img-top" alt="UI UX">
+                    <div class="card-body">
+                        <span class="badge bg-warning text-dark mb-2">تصميم وفنون</span>
+                        <h5 class="card-title fw-bold event-title">ورشة أساسيات الـ UI/UX وفهم المستخدم</h5>
+                        <p class="card-text text-muted small">مبادئ تصميم تجربة المستخدم وتخطيط الهياكل السلكية Wireframes.</p>
+                        <div class="text-muted small mb-3">📅 25 أكتوبر 2026 | 📍 منصة Zoom</div>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 pt-0"><a href="event.html" class="btn btn-primary w-100">التفاصيل</a></div>
+                </div>
+            </div>
+
+            <div class="col event-item" data-category="design">
+                <div class="card h-100 shadow-sm border-0 event-card">
+                    <img src="assets/img/design.jpg" class="card-img-top" alt="Figma workshop">
+                    <div class="card-body">
+                        <span class="badge bg-warning text-dark mb-2">تصميم وفنون</span>
+                        <h5 class="card-title fw-bold event-title">بناء أنظمة التصميم الاحترافية بـ Figma</h5>
+                        <p class="card-text text-muted small">إنشاء مكونات متجاوبة وأنظمة ألوان موحدة لتطبيقات الموبايل.</p>
+                        <div class="text-muted small mb-3">📅 3 نوفمبر 2026 | 📍 قاعة التصميم الرقمي</div>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 pt-0"><a href="event.html" class="btn btn-primary w-100">التفاصيل</a></div>
+                </div>
+            </div>
+
+            <div class="col event-item" data-category="design">
+                <div class="card h-100 shadow-sm border-0 event-card">
+                    <img src="assets/img/branding.jpg" class="card-img-top" alt="تصميم الهوية">
+                    <div class="card-body">
+                        <span class="badge bg-warning text-dark mb-2">تصميم وفنون</span>
+                        <h5 class="card-title fw-bold event-title">دورة تصميم الهوية البصرية والشعارات</h5>
+                        <p class="card-text text-muted small">علم النفس اللوني وقواعد التايبوغرافي في العلامات التجارية.</p>
+                        <div class="text-muted small mb-3">📅 9 نوفمبر 2026 | 📍 المركز الثقافي</div>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 pt-0"><a href="event.html" class="btn btn-primary w-100">التفاصيل</a></div>
+                </div>
+            </div>
+
+            <div class="col event-item" data-category="design">
+                <div class="card h-100 shadow-sm border-0 event-card">
+                    <img src="assets/img/motion.jpg" class="card-img-top" alt="Motion graphics">
+                    <div class="card-body">
+                        <span class="badge bg-warning text-dark mb-2">تصميم وفنون</span>
+                        <h5 class="card-title fw-bold event-title">ملتقى الإبداع والتحريك ثلاثي الأبعاد</h5>
+                        <p class="card-text text-muted small">مدخل إلى تحريك العناصر التفاعلية والمؤثرات البصرية للويب.</p>
+                        <div class="text-muted small mb-3">📅 16 نوفمبر 2026 | 📍 أونلاين</div>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 pt-0"><a href="event.html" class="btn btn-primary w-100">التفاصيل</a></div>
+                </div>
+            </div>
+
+            <!-- ========================= -->
+            <!-- ⚽ قسم الرياضة والنشاطات -->
+            <!-- ========================= -->
+            <div class="col event-item" data-category="sport">
+                <div class="card h-100 shadow-sm border-0 event-card">
+                    <img src="assets/img/chess.jpg" class="card-img-top" alt="شطرنج">
+                    <div class="card-body">
+                        <span class="badge bg-danger mb-2">رياضة ونشاطات</span>
+                        <h5 class="card-title fw-bold event-title">بطولة الشطرنج السريعة للجامعة</h5>
+                        <p class="card-text text-muted small">منافسة استراتيجية فكرية تجمع نخبة اللاعبين بين الكليات.</p>
+                        <div class="text-muted small mb-3">📅 1 نوفمبر 2026 | 📍 الصالة الافتراضية</div>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 pt-0"><a href="event.html" class="btn btn-primary w-100">التفاصيل</a></div>
+                </div>
+            </div>
+
+            <div class="col event-item" data-category="sport">
+                <div class="card h-100 shadow-sm border-0 event-card">
+                    <img src="assets/img/football.jpg" class="card-img-top" alt="كرة قدم">
+                    <div class="card-body">
+                        <span class="badge bg-danger mb-2">رياضة ونشاطات</span>
+                        <h5 class="card-title fw-bold event-title">دوري كرة القدم المصغرة للصالات</h5>
+                        <p class="card-text text-muted small">مباريات حماسية وتصفيات بين فرق البرمجة والشبكات.</p>
+                        <div class="text-muted small mb-3">📅 7 نوفمبر 2026 | 📍 الملعب الرياضي</div>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 pt-0"><a href="event.html" class="btn btn-primary w-100">التفاصيل</a></div>
+                </div>
+            </div>
+
+            <div class="col event-item" data-category="sport">
+                <div class="card h-100 shadow-sm border-0 event-card">
+                    <img src="assets/img/run.jpg" class="card-img-top" alt="ماراثون جري">
+                    <div class="card-body">
+                        <span class="badge bg-danger mb-2">رياضة ونشاطات</span>
+                        <h5 class="card-title fw-bold event-title">سباق الجري السنوي للصحة واللياقة</h5>
+                        <p class="card-text text-muted small">نشاط جماعي لتعزيز النشاط البدني ونمط الحياة الصحي بين الطلاب.</p>
+                        <div class="text-muted small mb-3">📅 14 نوفمبر 2026 | 📍 مسار الحديقة العامة</div>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 pt-0"><a href="event.html" class="btn btn-primary w-100">التفاصيل</a></div>
+                </div>
+            </div>
+
+            <div class="col event-item" data-category="sport">
+                <div class="card h-100 shadow-sm border-0 event-card">
+                    <img src="assets/img/esport.jpg" class="card-img-top" alt="رياضات إلكترونية">
+                    <div class="card-body">
+                        <span class="badge bg-danger mb-2">رياضة ونشاطات</span>
+                        <h5 class="card-title fw-bold event-title">دوري الرياضات الإلكترونية التفاعلية</h5>
+                        <p class="card-text text-muted small">تحدي حماسي في ألعاب الـ Strategy والـ MOBA مع جوائز.</p>
+                        <div class="text-muted small mb-3">📅 22 نوفمبر 2026 | 📍 سيرفر الديسكورد</div>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 pt-0"><a href="event.html" class="btn btn-primary w-100">التفاصيل</a></div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <button id="scrollTopBtn" title="الرجوع للأعلى"><i class="bi bi-arrow-up-short"></i></button>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <p class="mb-0 text-white-50">© 2026 دليل فعاليات الجامعة الافتراضية -    💻</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

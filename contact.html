@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header>
+        <nav class="navbar navbar-expand-lg shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold d-flex align-items-center text-success" href="index.html">
+                    <i class="bi bi-mortarboard-fill fs-3 me-2"></i>
+                    <span>دليل الفعاليات</span>
+                </a>
+                
+                <button id="themeToggle" class="btn btn-outline-success btn-sm rounded-circle ms-2" title="تبديل الوضع">
+                    <i class="bi bi-moon-fill" id="themeIcon"></i>
+                </button>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link fw-bold" href="index.html">الرئيسية</a></li>
+                        <li class="nav-item"><a class="nav-link" href="events.html">كل الفعاليات</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">عن الدليل</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        
+        <h2 class="fw-bold mb-3 text-center text-success"><i class="bi bi-envelope-paper me-2"></i>ابقَ على تواصل معنا</h2>
+        <p class="text-center text-muted mb-5 fs-5">عندك استفسار أو حابب تقترح فعالية جديدة؟ نحن هون لنسمعك!</p>
+
+        <div class="row g-5">
+            <!-- نموذج التواصل -->
+            <div class="col-lg-7">
+                <div class="bg-white p-4 p-md-5 rounded-3 shadow-sm border">
+                    <h4 class="fw-bold mb-4">أرسل لنا رسالة ✉️</h4>
+                    
+                    <div id="successAlert" class="alert alert-success d-none shadow-sm" role="alert">
+                        <i class="bi bi-check-circle-fill me-2"></i> <strong>تم الإرسال بنجاح!</strong> شكراً لتواصلك معنا.
+                    </div>
+                    <div id="errorAlert" class="alert alert-danger d-none shadow-sm" role="alert">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i> <strong>عذراً!</strong> يرجى التأكد من تعبئة جميع الحقول بشكل صحيح.
+                    </div>
+
+                    <form id="contactForm" novalidate>
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">الاسم الكامل <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control bg-light border-0 py-2" id="userName" placeholder="أدخل اسمك هنا">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">البريد الإلكتروني <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control bg-light border-0 py-2" id="userEmail" placeholder="example@svuonline.org">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">رسالتك <span class="text-danger">*</span></label>
+                            <textarea class="form-control bg-light border-0" id="userMessage" rows="5" placeholder="اكتب تفاصيل رسالتك أو اقتراحك..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100 py-3 fw-bold fs-5 shadow-sm">إرسال الرسالة 🚀</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- معلومات التواصل البديلة -->
+            <div class="col-lg-5">
+                <div class="bg-light p-4 rounded-3 h-100 border">
+                    <h4 class="fw-bold mb-4">معلومات التواصل 📌</h4>
+                    
+                    <ul class="list-unstyled mb-5">
+                        <li class="mb-4 d-flex align-items-center">
+                            <div class="bg-white text-success rounded-circle p-3 shadow-sm me-3"><i class="bi bi-envelope-fill fs-4"></i></div>
+                            <div>
+                                <span class="d-block fw-bold">البريد العام:</span>
+                                <a href="mailto:info@svuonline.org" class="text-decoration-none text-muted">info@svuonline.org</a>
+                            </div>
+                        </li>
+                        <li class="mb-4 d-flex align-items-center">
+                            <div class="bg-white text-success rounded-circle p-3 shadow-sm me-3"><i class="bi bi-building-fill fs-4"></i></div>
+                            <div>
+                                <span class="d-block fw-bold">المقر:</span>
+                                <span class="text-muted">الجامعة الافتراضية السورية</span>
+                            </div>
+                        </li>
+                        <li class="mb-4 d-flex align-items-center">
+                            <div class="bg-white text-success rounded-circle p-3 shadow-sm me-3"><i class="bi bi-clock-fill fs-4"></i></div>
+                            <div>
+                                <span class="d-block fw-bold">أوقات الاستجابة:</span>
+                                <span class="text-muted">الأحد - الخميس (9 ص - 3 م)</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                  <h5 class="fw-bold mb-3">تابعنا على السوشيال ميديا:</h5>
+<div class="d-flex gap-2">
+    <!-- صفحة فيسبوك الرسمية للجامعة الافتراضية -->
+    <a href="https://www.facebook.com/SVUONLINE.ORG" target="_blank" class="btn btn-outline-success rounded-circle p-2" title="فيسبوك">
+        <i class="bi bi-facebook fs-5"></i>
+    </a>
+    <!-- حساب الجامعة الافتراضية على منصة X (تويتر سابقاً) -->
+    <a href="https://twitter.com/svu_syria" target="_blank" class="btn btn-outline-success rounded-circle p-2" title="تويتر">
+        <i class="bi bi-twitter-x fs-5"></i>
+    </a>
+    <!-- قناة التيليغرام الرسمية للجامعة (أو رابط إنستغرام) -->
+    <a href="https://t.me/svu_online" target="_blank" class="btn btn-outline-success rounded-circle p-2" title="تيليغرام">
+        <i class="bi bi-telegram fs-5"></i>
+    </a>
+</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <button id="scrollTopBtn" title="الرجوع للأعلى"><i class="bi bi-arrow-up-short"></i></button>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <p class="mb-0 text-white-50">© 2026 دليل فعاليات الجامعة الافتراضية</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

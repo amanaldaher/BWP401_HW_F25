@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل فعاليات الجامعة الافتراضية</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;850&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold d-flex align-items-center text-success" href="index.html">
+                    <i class="bi bi-mortarboard-fill fs-3 me-2"></i>
+                    <span>دليل الفعاليات</span>
+                </a>
+                
+                <button id="themeToggle" class="btn btn-outline-success btn-sm rounded-circle ms-2" title="تبديل الوضع">
+                    <i class="bi bi-moon-fill" id="themeIcon"></i>
+                </button>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link fw-bold active" href="index.html">الرئيسية</a></li>
+                        <li class="nav-item"><a class="nav-link" href="events.html">كل الفعاليات</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">عن الدليل</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-5">
+        
+        <!-- قسم أسماء الفريق -->
+        <div class="alert alert-success text-center shadow-sm border-0 mb-5">
+            <h5 class="fw-bold"><i class="bi bi-people-fill me-2"></i>فريق العمل (IDs)</h5>
+<p class="mb-0 fs-5">أمان الضاهر - ID: 341786 | راما - ID: 361468 | إبراهيم   - ID: 330272</p>        </div>
+
+        <!-- 1. قسم الفعاليات البارزة (سلايدر) -->
+        <section class="my-5">
+            <h3 class="fw-bold mb-4 border-start border-success border-4 ps-2">🔥 فعاليات بارزة هذا الأسبوع</h3>
+            
+            <div id="featuredEventsCarousel" class="carousel slide shadow rounded-3 overflow-hidden" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets/img/ai.jpg" class="d-block w-100 carousel-img" alt="مؤتمر الذكاء الاصطناعي">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-3 rounded-3">
+                            <h5 class="text-white fw-bold">مؤتمر الذكاء الاصطناعي السنوي</h5>
+                            <p class="text-white-50">أحدث التطورات والتطبيقات العملية في عالم التقنية الحديثة.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/hackathon.jpg" class="d-block w-100 carousel-img" alt="هاكاثون">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-3 rounded-3">
+                            <h5 class="text-white fw-bold">هاكاثون ومسابقة البرمجة الجامعية</h5>
+                            <p class="text-white-50">فرصتك للتنافس وبناء حلول برمجية واقعية مع نخبة الطلاب.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/uiux.jpg" class="d-block w-100 carousel-img" alt="ورشة التصميم">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-3 rounded-3">
+                            <h5 class="text-white fw-bold">ورشة عمل UI/UX للويب التفاعلي</h5>
+                            <p class="text-white-50">تعلم بناء واجهات احترافية ومريحة لتجربة مستخدم متكاملة.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#featuredEventsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#featuredEventsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </section>
+
+        <!-- 2. قسم التصنيفات السريعة -->
+        <section class="my-5 text-center">
+            <h4 class="fw-bold mb-4">تصفح حسب التصنيف</h4>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="events.html" class="btn btn-outline-success rounded-pill px-4">الكل</a>
+                <a href="events.html" class="btn btn-outline-success rounded-pill px-4">💻 تقنية وبرمجة</a>
+                <a href="events.html" class="btn btn-outline-success rounded-pill px-4">🎨 تصميم وفنون</a>
+                <a href="events.html" class="btn btn-outline-success rounded-pill px-4">⚽ رياضة ونشاطات</a>
+            </div>
+        </section>
+
+        <!-- 3. قسم أحدث الفعاليات كامل (3 كروت بالصور المحلية) -->
+        <section class="my-5">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 class="fw-bold border-start border-success border-4 ps-2 mb-0">📌 أحدث الفعاليات</h3>
+                <a href="events.html" class="btn btn-link text-decoration-none text-success fw-bold">عرض الكل &larr;</a>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0 event-card">
+                        <img src="assets/img/cyber.jpg" class="card-img-top" alt="ندوة الأمن السيبراني">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">تقنية وبرمجة</span>
+                            <h5 class="card-title fw-bold event-title">ندوة أساسيات الأمن السيبراني</h5>
+                            <p class="card-text text-muted small">مقدمة في حماية الأنظمة الرقمية وأفضل الممارسات الدفاعية.</p>
+                            <div class="text-muted small mb-3">📅 20 أكتوبر 2026 | 📍 القاعة الافتراضية</div>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0">
+                            <a href="event.html" class="btn btn-primary w-100">التفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0 event-card">
+                        <img src="assets/img/uiux.jpg" class="card-img-top" alt="ورشة الـ UI/UX">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">تصميم وفنون</span>
+                            <h5 class="card-title fw-bold event-title">ورشة الويب الحديث والـ UI/UX</h5>
+                            <p class="card-text text-muted small">نظرة تطبيقية لبناء واجهات تفاعلية سريعة ومتجاوبة.</p>
+                            <div class="text-muted small mb-3">📅 25 أكتوبر 2026 | 📍 منصة Zoom</div>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0">
+                            <a href="event.html" class="btn btn-primary w-100">التفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0 event-card">
+                        <img src="assets/img/code.jpg" class="card-img-top" alt="تطوير ويب">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">تقنية وبرمجة</span>
+                            <h5 class="card-title fw-bold event-title">ورشة بناء وتكامل واجهات الـ REST API</h5>
+                            <p class="card-text text-muted small">كيفية ربط التطبيقات واختبار الـ Endpoints باحترافية.</p>
+                            <div class="text-muted small mb-3">📅 5 نوفمبر 2026 | 📍 أونلاين - منصة Teams</div>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0">
+                            <a href="event.html" class="btn btn-primary w-100">التفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- زر الرجوع للأعلى -->
+    <button id="scrollTopBtn" title="الرجوع للأعلى">
+        <i class="bi bi-arrow-up-short"></i>
+    </button>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <p class="mb-0 text-white-50">© 2026 دليل فعاليات الجامعة الافتراضية -    💻</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
