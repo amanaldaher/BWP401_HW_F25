@@ -131,3 +131,99 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
+// ==========================================
+// كود تغيير محتوى صفحة الفعالية ديناميكياً
+// ==========================================
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. قراءة رقم الفعالية من الرابط (مثلاً ?id=3)
+    const urlParams = new URLSearchParams(window.location.search);
+    const eventId = urlParams.get('id');
+
+    // 2. إذا كان في رقم بالرابط، بنغير المحتوى
+    if (eventId) {
+        // قاعدة بيانات مصغرة للفعاليات
+        const eventsData = {
+            '3': {
+                title: 'ورشة بناء واجهات الويب',
+                category: 'تقنية وبرمجة',
+                img: 'assets/img/code.jpg',
+                desc: 'ورشة عمل متقدمة لتعلم استخدام المكاتب الحديثة في بناء التطبيقات وتطوير واجهات المستخدم التفاعلية.'
+            },
+            '4': {
+                title: 'هاكاثون البرمجة السنوي',
+                category: 'تقنية وبرمجة',
+                img: 'assets/img/hackathon.jpg',
+                desc: 'تحدي برمجي متكامل لمدة 24 ساعة لبناء حلول تقنية مبتكرة بمشاركة نخبة من طلاب الهندسة المعلوماتية.'
+            }
+        };
+
+        const selectedEvent = eventsData[eventId];
+
+        // 3. تبديل النصوص والصور بالصفحة بناءً على الداتا
+        if (selectedEvent) {
+            const titleEl = document.getElementById('detailTitle');
+            const catEl = document.getElementById('detailCategory');
+            const imgEl = document.getElementById('detailImage');
+            const descEl = document.getElementById('detailDesc');
+
+            if(titleEl) titleEl.textContent = selectedEvent.title;
+            if(catEl) catEl.textContent = selectedEvent.category;
+            if(imgEl) imgEl.src = selectedEvent.img;
+            if(descEl) descEl.textContent = selectedEvent.desc;
+        }
+    }
+});
+// ==========================================
+// كود المشاركة وتوليد ملف التقويم (.ics)
+// ==========================================
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // 1. زر المشاركة (Share API)
+    const shareBtn = document.getElementById('shareBtn');
+    if (shareBtn) {
+        shareBtn.addEventListener('click', () => {
+            // إذا المستخدم فاتح من موبايل وبيدعم المشاركة المباشرة
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    url: window.location.href
+                }).catch(console.error);
+            } else {
+                // إذا فاتح من لابتوب: بننسخ الرابط للحافظة
+                navigator.clipboard.writeText(window.location.href);
+                alert('تم نسخ رابط الفعالية للحافظة بنجاح! 📋');
+            }
+        });
+    }
+
+    // 2. زر أضف للتقويم (توليد ملف .ics)
+    const calendarBtn = document.getElementById('addToCalendarBtn');
+    if (calendarBtn) {
+        calendarBtn.addEventListener('click', () => {
+            const titleEl = document.getElementById('detailTitle');
+            const eventTitle = titleEl ? titleEl.innerText : 'فعالية الجامعة الافتراضية';
+            
+            // بناء محتوى ملف التقويم القياسي
+            const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:${eventTitle}
+DTSTART:20261028T140000Z
+DTEND:20261028T160000Z
+LOCATION:الجامعة الافتراضية السورية
+DESCRIPTION:تذكير بحضور الفعالية: ${eventTitle}
+END:VEVENT
+END:VCALENDAR`;
+
+            // خدعة إنشاء الملف وتحميله برمجياً
+            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'event.ics'); // اسم الملف اللي رح ينزل
+            document.body.appendChild(link);
+            link.click(); // كبسة وهمية لتنزيل الملف
+            document.body.removeChild(link);
+        });
+    }
+});
